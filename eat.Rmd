@@ -77,5 +77,5 @@ fisher.test(table1)
 
 # Discussion and Conclusion
 
-Based on the results, we reject the null hypothesis because the p-value is so small, 0.0008179, concluding that the there is a difference in the frequency of eating out based on race.
+Based on the results, we reject the null hypothesis due to the p-value being so small, 0.0008179, concluding that the there is a difference in the frequency of eating out based on race. Therefore, we can conclude that white people go out to eat more than black people and other ethnicites do.
 
