@@ -42,7 +42,7 @@ mydata <- na.omit(mydata)
 
 # Method
 
-The response variable (how frequently different races go out to eat) is numerical ; the input variable is categorical. We have a Num ~ Cat
+The variable of the study is Cat ~ Num 
 
 # Results
 
