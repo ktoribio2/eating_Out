@@ -78,6 +78,8 @@ The chi-squared test shows that the p-value of 0.0008179 is so small that it is 
 
 The fisher exact test for count data shows that the p-value of 0.001208 is also very small that the null hypothesis will be rejected. 
 
+The fisher XY test is showing that there is not much of a difference between the white ethnicity and only other ethnicities with a high p-value of 0.3543. It is also showing that there is not much of a difference between the white ethnicity and only the black ethnicity with a high p-value of 0.2815 in terms of eating out. All in all, there is a difference between the white ethnicity and the black + other ethnicities, therefore concluding that the null hypothesis will be rejected. 
+
 # Discussion and Conclusion
 
 
