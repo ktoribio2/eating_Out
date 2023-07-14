@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-Is there a relationship between races and how frequently they go out to eat
+In this write up we are analyzing to see if there a difference in the frequency of eating out based on ethnicity.
 
 ## There were two years in which the General Social Survey asked about the frequency of eating out.
 ### Find those years and for the first year the question was asked download that years data in a stata format - its name will be "GSSxxxx.dta" where the xxxx is replaced by the year.  For example if the year was 1983 its name would be GSS1983.dta. Your assignment is to download the GSS yearly dataset for the first year the question was asked and then  write up the answer to the question by editing the  code block in line 31 to eval=TRUE and finish the job. 
@@ -42,20 +42,11 @@ mydata <- na.omit(mydata)
 
 # Method
 
-The variable of the study is Cat ~ Num 
+The data for this study was taken from the University of Chicago. The categorical value is race and the numerical variable is the frequency in which how often they go out to eat. This study is Cat ~ Num.
 
 # Results
 
 ## Descriptive Results
-
-### Numerical Descriptive Results
-
-```{r}
-table1 <- xtabs(~race + eatout, data=mydata)
-rowPerc(table1)
-colPerc(table1)
-```
-
 
 ### Graphical Descriptive Results
 
@@ -64,18 +55,33 @@ barchartGC(~race + eatout,data=mydata)
 barchartGC(~race + eatout,data=mydata,type="percent")
 ```
 
-The bar chart suggests that there is a difference in the percentage of races and eating out 
+The bar chart suggests that there is a difference in the percentage of races and eating out. 
 
-### Inferential Results
+### Numerical Descriptive Results
+
+```{r}
+table1 <- xtabs(~race + eatout, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
+According to the results in this numerical description, it shows that the white ethnicity goes out to eat more frequently compared to the black and other ethnicites.
+
+## Inferential Results
 
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-fisher.test(table1)
+fisherXY(mydata$race,mydata$eatout,printAll=T)
 ```
 
+The chi-squared test shows that the p-value of 0.0008179 is so small that it is unlikely that the null hypothesis is correct.
+
+The fisher exact test for count data shows that the p-value of 0.001208 is also very small that the null hypothesis will be rejected. 
 
 # Discussion and Conclusion
 
-Based on the results, we reject the null hypothesis due to the p-value being so small, 0.0008179, concluding that the there is a difference in the frequency of eating out based on race. Therefore, we can conclude that white people go out to eat more than black people and other ethnicites do.
+
+Based on the results, we can confirm that there is a difference in the frequency in which what races go out to eat more. The white ethnicity has a higher percentage of eating out compared to both black and other ethnicities. Therefore, we are rejecting the null hypothesis.
+
+
 
